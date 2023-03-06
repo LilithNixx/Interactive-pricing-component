@@ -1,0 +1,311 @@
+@use "vars";
+@use "minireset";
+
+body {
+    max-width: 1440px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    background-image: url(../images/bg-pattern.svg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title-container {
+        max-width: 540px;
+       
+        position: relative;
+        
+        margin: 90px 0;
+    
+        .circles {
+            margin: 0 auto;
+            z-index: 0;
+            
+            position: absolute;
+            left: 130px;
+            bottom: -30px;
+
+            @media screen and (max-width:600px) {
+                left: 100px;
+            }
+        }
+
+        .title {
+            text-align: center;
+            z-index: 10;
+            font-size: 30px;
+            color: vars.$dark-desaturated-blue;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+
+            @media screen and (max-width:600px) {
+                font-size: 25px;
+            }
+        }
+
+        .subtitle {
+            text-align: center;
+            color: vars.$grayish-blue;
+            z-index: 10;
+            position: relatives;
+
+            @media screen and (max-width:600px) {
+                font-size: 15px;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .card-container {
+        width: 540px;
+        
+        background-color: vars.$white;
+        border-radius: 10px 10px  0 0;
+
+        padding: 40px;
+        margin-bottom: 2px;
+
+        @media screen and (max-width:600px) {
+           min-width: 375px;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+    
+            font-weight: 800;
+
+            .pageviews {
+                text-transform: uppercase;
+                color:vars.$grayish-blue;
+                letter-spacing: 3px;
+            }
+
+            .price-paragraph {
+                display: flex;
+                align-items: center;
+                color:vars.$grayish-blue;
+            }
+
+            .dolar-symbol, .price, .price-zeros{
+                font-size: 2.5em;
+                color: vars.$dark-desaturated-blue;
+            }
+
+            @media screen and (max-width:600px) {
+                flex-direction: column;
+                justify-content: space-between;
+                height: 180px;
+            }
+        }
+
+        .container2 {
+            width: 100%;
+            margin-bottom: 10px;
+            
+            @media screen and (max-width:600px) {
+                height: 180px;
+                position: relative;
+                bottom: 150px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .slider {
+                width: 100%;
+                height: 10px;
+
+                margin-bottom: 30px;
+                appearance: none;
+                background-color: vars.$lightgrayish-blue;
+                border-radius: 5px;
+                outline: none;
+                
+                background-image: linear-gradient(to right, vars.$soft-cyan calc(vars.$leftToRight * 1%), transparent 0%);
+                //calc will allow me to change the variable's value of the linear gradient through js. By default it's 50.
+            } 
+
+            //-webkit-slider-thumb es un pseudoelemento q representa el selector que el usuario puede mover a lo largo de la ranura de un elemento <input> con type="range" para modificar su valor numérico.
+            .slider::-webkit-slider-thumb {
+                appearance: none;
+                width: 35px;
+                height: 35px;
+                background: {
+                    image: url(../images/icon-slider.svg);
+                    repeat: no-repeat;
+                    position: 50% 50%;
+                    color: vars.$strong-cyan;
+                }
+                border-radius: 50%;
+
+            }
+
+            .slider:hover {
+                cursor: pointer;
+            }
+
+            .slider::-webkit-slider-thumb:hover {
+                box-shadow: 0 5px 10px vars.$strong-cyan;
+            }
+            .billing {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+
+                color: vars.$grayish-blue;
+                font-size: 0.8em;
+                font-weight: 800;
+                                
+                p, .billingbox-label{
+                    margin-right: 10px;
+                }
+
+                /*----START TOGGLER----*/
+                .billingbox-label {
+                    border-radius: 20px;
+                    width: 45px;
+                    height: 25px;
+
+                    background-color: vars.$light-grayish-blue;
+                    
+                    position: relative;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                #billingbox {
+                    appearance: none; /*saca la apariencia por defecto.
+                    Debe estar conectado al label con el for.
+                    El label debe ir despues del input*/
+                }
+
+                //activar toggler: clase o id del input~ clase del label
+                #billingbox:checked~ .billingbox-label {
+                    background-color: vars.$strong-cyan;
+                }
+                
+                //toggler:
+                .billingbox-label:after {
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+
+                    background-color: vars.$white;
+                    border-radius: 100px;
+                    
+                    position: absolute;
+                    top: 3px;
+                    left: 4px;
+                    transition: 0.3s; //para que no se mueva bruscamente
+                }
+
+                //moving the toogler:
+                #billingbox:checked + .billingbox-label:after {
+                    left: 20px;
+                }
+                /*----END TOGGLER----*/
+
+                .discount {
+                    color: vars.$light-red;
+                    font-size: 0.8em;
+                    border-radius: 20px;
+                    background-color:vars.$light-grayish-red;
+                    padding: 3px 5px;
+                }
+            }
+
+        }
+    }
+
+    .container3 {
+        width: 540px;
+        
+        background-color: vars.$white;
+        border-radius: 0 0 10px 10px;
+
+        padding: 40px;
+        margin-bottom: 90px;
+        margin-top: 2px;
+
+        display: flex;
+        align-items: center;
+        
+        color: vars.$grayish-blue;
+        font-size: 0.8em;
+
+        @media screen and (max-width:600px) {
+            max-width: 500px;
+
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+
+            position: relative;
+            bottom: 160px;
+        }
+
+        .left-cont {
+            width: 50%;
+
+            ul {
+                line-height: 25px;
+
+                img {
+                    padding-right: 5px;
+                }
+            }
+
+            @media screen and (max-width:600px) {
+                text-align: center;
+            }
+        }
+
+        .right-cont {
+            width: 50%;
+
+            .btn-start {
+                padding: 15px 40px;
+                border-radius: 20px;
+                float: right;
+
+                outline: none;
+                border: none;
+                background-color: vars.$dark-desaturated-blue;
+
+                color: vars.$white;
+                font-size: 1.2em;
+                font-weight: 700;
+            }
+
+            .btn-start:hover {
+                cursor: pointer;
+                box-shadow: 0 0 2px 2px hsla(227, 35%, 25%, 0.685);
+            }
+
+            @media screen and (max-width:600px) {
+                margin: 0 auto;
+                position:relative;
+                right: 20px;
+            }
+        }
+    }
+
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+
+        a { 
+            color: hsl(228, 45%, 44%); 
+        }
+    }
+    
+}

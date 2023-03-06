@@ -1,0 +1,337 @@
+/*:export {
+  leftToRight: 50;
+}*/
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  background-image: url(../images/bg-pattern.svg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .title-container {
+  max-width: 540px;
+  position: relative;
+  margin: 90px 0;
+}
+body .title-container .circles {
+  margin: 0 auto;
+  z-index: 0;
+  position: absolute;
+  left: 130px;
+  bottom: -30px;
+}
+@media screen and (max-width: 600px) {
+  body .title-container .circles {
+    left: 100px;
+  }
+}
+body .title-container .title {
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  color: hsl(227, 35%, 25%);
+  font-weight: 800;
+  margin-bottom: 10px;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  body .title-container .title {
+    font-size: 25px;
+  }
+}
+body .title-container .subtitle {
+  text-align: center;
+  color: hsl(225, 20%, 60%);
+  z-index: 10;
+  position: relatives;
+}
+@media screen and (max-width: 600px) {
+  body .title-container .subtitle {
+    font-size: 15px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+body .card-container {
+  width: 540px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px 10px 0 0;
+  padding: 40px;
+  margin-bottom: 2px;
+}
+@media screen and (max-width: 600px) {
+  body .card-container {
+    min-width: 375px;
+  }
+}
+body .card-container .container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  font-weight: 800;
+}
+body .card-container .container1 .pageviews {
+  text-transform: uppercase;
+  color: hsl(225, 20%, 60%);
+  letter-spacing: 3px;
+}
+body .card-container .container1 .price-paragraph {
+  display: flex;
+  align-items: center;
+  color: hsl(225, 20%, 60%);
+}
+body .card-container .container1 .dolar-symbol, body .card-container .container1 .price, body .card-container .container1 .price-zeros {
+  font-size: 2.5em;
+  color: hsl(227, 35%, 25%);
+}
+@media screen and (max-width: 600px) {
+  body .card-container .container1 {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+  }
+}
+body .card-container .container2 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 600px) {
+  body .card-container .container2 {
+    height: 180px;
+    position: relative;
+    bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+body .card-container .container2 .slider {
+  width: 100%;
+  height: 10px;
+  margin-bottom: 30px;
+  appearance: none;
+  background-color: hsl(224, 65%, 95%);
+  border-radius: 5px;
+  outline: none;
+  
+  background-image: linear-gradient(to right, hsl(174, 77%, 80%) 50%, transparent 0%);
+}
+body .card-container .container2 .slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+}
+body .card-container .container2 .slider:hover {
+  cursor: pointer;
+}
+body .card-container .container2 .slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 5px 10px hsl(174, 86%, 45%);
+}
+body .card-container .container2 .billing {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: hsl(225, 20%, 60%);
+  font-size: 0.8em;
+  font-weight: 800;
+  /*----START TOGGLER----*/
+  /*----END TOGGLER----*/
+}
+body .card-container .container2 .billing p, body .card-container .container2 .billing .billingbox-label {
+  margin-right: 10px;
+}
+body .card-container .container2 .billing .billingbox-label {
+  border-radius: 20px;
+  width: 45px;
+  height: 25px;
+  background-color: hsl(223, 50%, 87%);
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body .card-container .container2 .billing #billingbox {
+  appearance: none; /*saca la apariencia por defecto.
+Debe estar conectado al label con el for.
+El label debe ir despues del input*/
+}
+body .card-container .container2 .billing #billingbox:checked ~ .billingbox-label {
+  background-color: hsl(174, 86%, 45%);
+}
+body .card-container .container2 .billing .billingbox-label:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 100px;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: 0.3s;
+}
+body .card-container .container2 .billing #billingbox:checked + .billingbox-label:after {
+  left: 20px;
+}
+body .card-container .container2 .billing .discount {
+  color: hsl(15, 100%, 70%);
+  font-size: 0.8em;
+  border-radius: 20px;
+  background-color: hsl(14, 92%, 95%);
+  padding: 3px 5px;
+}
+body .container3 {
+  width: 540px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0 0 10px 10px;
+  padding: 40px;
+  margin-bottom: 90px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  color: hsl(225, 20%, 60%);
+  font-size: 0.8em;
+}
+@media screen and (max-width: 600px) {
+  body .container3 {
+    max-width: 500px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    bottom: 160px;
+  }
+}
+body .container3 .left-cont {
+  width: 50%;
+}
+body .container3 .left-cont ul {
+  line-height: 25px;
+}
+body .container3 .left-cont ul img {
+  padding-right: 5px;
+}
+@media screen and (max-width: 600px) {
+  body .container3 .left-cont {
+    text-align: center;
+  }
+}
+body .container3 .right-cont {
+  width: 50%;
+}
+body .container3 .right-cont .btn-start {
+  padding: 15px 40px;
+  border-radius: 20px;
+  float: right;
+  outline: none;
+  border: none;
+  background-color: hsl(227, 35%, 25%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+body .container3 .right-cont .btn-start:hover {
+  cursor: pointer;
+  box-shadow: 0 0 2px 2px hsla(227, 35%, 25%, 0.685);
+}
+@media screen and (max-width: 600px) {
+  body .container3 .right-cont {
+    margin: 0 auto;
+    position: relative;
+    right: 20px;
+  }
+}
+body .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+body .attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=styles.css.map */

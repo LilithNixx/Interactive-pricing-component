@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <!-----------CSS--------------->
+  <link rel="StyleSheet" href= "./sass/styles.css"  type= "text/css">
+  <!-----------FONTS------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="title-container">
+    <img class="circles" src="./images/pattern-circles.svg" alt="pattern-circles">
+    <h1 class="title">Simple, traffic-based pricing</h1> 
+    <h2 class="subtitle"> Sign-up for our 30-day trial. No credit card required.</h2>
+  </header>
+  
+  <form id="form">
+    <section class="card-container">
+      <div class="container1">
+        <p class="pageviews"><span id="views">100K </span> Pageviews</p>
+        <p class="price-paragraph">
+          <span class="dolar-symbol">$</span>
+          <span id="price" class="price">16</span>
+          <span class="price-zeros">.00</span>
+          <span id="month-year">/month</span>
+        </p>
+      </div>
+  
+      <div class="container2">
+        <input type="range" id="slider" class="slider" min="0" max="4" role="slider">
+        <div class="billing">
+          <p>Monthly Billing</p>
+          <input type="checkbox" id="billingbox">
+          <label for="billingbox" class="billingbox-label"></label>
+          <p>Yearly Billing</p> 
+          <p class="discount">25% discount</p>
+        </div>
+      </div>
+    </section>
+    <footer class="container3">
+      <div class="left-cont">
+        <ul>
+          <li><img src="./images/icon-check.svg"> Unlimited websites</li>
+          <li><img src="./images/icon-check.svg">  100% data ownership</li>
+          <li> <img src="./images/icon-check.svg"> Email reports</li>
+        </ul>
+      </div>
+      <div class="right-cont">
+        <button type="submit" class="btn-start" id="btn-start"> Start my trial</button>
+      </div>
+    </footer>
+  </form>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/LilithNixx">LilithNixx</a>.
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
