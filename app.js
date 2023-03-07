@@ -1,4 +1,4 @@
-import _vars from '../sass/_vars.scss';
+//import _vars from '../sass/_vars.scss';
 
 
 const views = document.getElementById('views'); 
@@ -81,6 +81,6 @@ function restart(e) {
     billingbox.checked = false;
 }   
 
-function updateRange() {
+/*function updateRange() {
     slider.style.setProperty('vars.leftToRight', leftToRightArray[parseInt(slider.value)]);
-}
+}*/
