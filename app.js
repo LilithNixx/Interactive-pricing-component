@@ -14,11 +14,12 @@ const pricePerMonth = [8, 12, 16, 24, 36];
 const leftToRightArray = [0, 25, 50, 75, 100];
 
 slider.addEventListener('input', updatePrice);
+slider.addEventListener('input', updateRange);
+
 
 billingbox.addEventListener('click', updatePrice);
 
 form.addEventListener('submit', restart);
-
 
 
 
@@ -70,7 +71,6 @@ function updatePrice() {
     }
 }
 
-
 function restart(e) {
     e.preventDefault();
     
@@ -81,6 +81,9 @@ function restart(e) {
     billingbox.checked = false;
 }   
 
-/*function updateRange() {
-    slider.style.setProperty('vars.leftToRight', leftToRightArray[parseInt(slider.value)]);
-}*/
+function updateRange() {
+   
+    percent = slider.value*25;
+    slider.style.backgroundImage = `linear-gradient(to right, #a5f3eb ${percent}%, #eaeefb ${percent}%)`;
+      
+}

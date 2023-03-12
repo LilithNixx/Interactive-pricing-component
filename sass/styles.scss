@@ -130,13 +130,12 @@ body {
                 border-radius: 5px;
                 outline: none;
                 
-                background-image: linear-gradient(to right, vars.$soft-cyan calc(vars.$leftToRight * 1%), transparent 0%);
-                //calc will allow me to change the variable's value of the linear gradient through js. By default it's 50.
+                background-image: linear-gradient(to right, vars.$soft-cyan 50%, transparent 0%);
             } 
 
             //-webkit-slider-thumb es un pseudoelemento q representa el selector que el usuario puede mover a lo largo de la ranura de un elemento <input> con type="range" para modificar su valor numérico.
             .slider::-webkit-slider-thumb {
-                appearance: none;
+                -webkit-appearance: none;
                 width: 35px;
                 height: 35px;
                 background: {
@@ -148,7 +147,31 @@ body {
                 border-radius: 50%;
 
             }
+            .slider::-moz-range-thumb {
+                -webkit-appearance: none;
+                width: 35px;
+                height: 35px;
+                background: {
+                    image: url(../images/icon-slider.svg);
+                    repeat: no-repeat;
+                    position: 50% 50%;
+                    color: vars.$strong-cyan;
+                }
+                border-radius: 50%;
+            }
 
+            .slider::-ms-thumb {
+                appearance: none;
+                width: 35px;
+                height: 35px;
+                background: {
+                    image: url(../images/icon-slider.svg);
+                    repeat: no-repeat;
+                    position: 50% 50%;
+                    color: vars.$strong-cyan;
+                }
+                border-radius: 50%;
+            }
             .slider:hover {
                 cursor: pointer;
             }

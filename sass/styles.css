@@ -1,7 +1,3 @@
-/*:export {
-  leftToRight: 50;
-}*/
-
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -192,13 +188,32 @@ body .card-container .container2 .slider {
   height: 10px;
   margin-bottom: 30px;
   appearance: none;
-  background-color: hsl(224, 65%, 95%);
+  background-color: hsl(226, 68%, 95%);
   border-radius: 5px;
   outline: none;
-  
-  background-image: linear-gradient(to right, hsl(174, 77%, 80%) 50%, transparent 0%);
+  background-image: linear-gradient(to right, hsl(174, 76%, 80%) 50%, transparent 0%);
 }
 body .card-container .container2 .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+}
+body .card-container .container2 .slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+}
+body .card-container .container2 .slider::-ms-thumb {
   appearance: none;
   width: 35px;
   height: 35px;
